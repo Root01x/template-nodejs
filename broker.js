@@ -1,7 +1,7 @@
 const mosca = require('mosca')
 const port2 = process.env.MQTTPORT ?? 1234;
 const broker = new mosca.Server({
-    port:port2
+    port:Math.floor(port2)
 })
 broker.authenticate = function(client, username, password, callback) {
     // Implementa tu lógica de autenticación aquí
