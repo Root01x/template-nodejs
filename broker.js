@@ -1,5 +1,5 @@
 const mosca = require('mosca')
-const port2 = process.env.MQTTPORT ?? 1234;
+const port2 = process.env.MQTTPORT ?? 1883;
 const broker = new mosca.Server({
     port:Math.floor(port2)
 })
@@ -16,9 +16,13 @@ broker.on('clientConnected', function(client) {
     console.log('Cliente conectado:', client.id);
   });
 
-  broker.on('ready', () => {   
-    
-    console.log(broker)
+broker.on('ready', () => {  
+    console.log('Broker iniciado')
+    setInterval(()=>{        
+        
+        console.log('...')
+        
+    },10000) 
 })
 
 broker.on('published', (packet)=>{
