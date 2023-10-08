@@ -16,8 +16,9 @@ broker.on('clientConnected', function(client) {
     console.log('Cliente conectado:', client.id);
   });
 
-  broker.on('ready', () => {
-    console.log('Broker is ready')
+  broker.on('ready', () => {   
+    
+    console.log(broker)
 })
 
 broker.on('published', (packet)=>{
