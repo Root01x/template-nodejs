@@ -3,7 +3,7 @@ const mosca = require('mosca')
 const config = require('./config')
 const broker = new mosca.Server({
  port:config.port,
-   host:config.host 
+ host:config.host 
 })
 broker.authenticate = function(client, username, password, callback) {
     // Implementa tu lógica de autenticación aquí
