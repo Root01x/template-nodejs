@@ -17,14 +17,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/lightweight-charts@4.0.1/dist/lightweight-charts.standalone.production.js"></script>
+    <link rel="stylesheet" href="graficos/chart.css">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    
     <div class="container">
-        <h1>Kilovatio-hora: <span id="kwh">0</span></h1>
-        <h1>Amperaje: <span id="amp">0</span></h1>
+        <div class="datosContainer">
+            <h1>Kilovatio-hora: <span id="kwh">0</span></h1>
+            <h1>Amperaje: <span id="amp">0</span></h1>
+        </div>
+        <div class="chartContainerKw">
+            <h1>Historial de Consumo Kw/H</h1>
+    
+        </div>
     </div>
+    
 </body>
+<script src="graficos/chart.js"></script>
 </html>

@@ -1,13 +1,29 @@
 
-:root {
-    color-scheme: light dark;
+/* :root {
+    color-scheme: dark;
+} */
+
+.container {    
+   
+   
 }
-.container {
+.datosContainer{
     text-align: center;
-    width: 80%;
-    height: 100vh;
+    color: white;
+}
+.chartContainerKw{
+    text-align: center;
+    color: white;
+    overflow: auto;
+    border: 1px solid #434651;
+    border-radius: 16px;
+    padding: 32px 40px;
 }
 body{
+    background-color: #000000;
+    font-family: 'Roboto Mono', monospace;
     display: flex;
+    
     justify-content: center;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,600;0,700;1,300&display=swap');
