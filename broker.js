@@ -1,15 +1,14 @@
-const mosca = require('mosca')
-//const port2 = process.env.MQTTPORT ?? 1883;
-const config = require('./config')
-const broker = new mosca.Server({
- port:config.port,
- host:config.host 
+import mosca from 'mosca'
+import { config } from './config.js';
+export const broker = new mosca.Server({
+ port:config.port
+ 
 })
 broker.authenticate = function(client, username, password, callback) {
     // Implementa tu lógica de autenticación aquí
-    const authorized = (username === 'user01' && password.toString() === '12345678');
-    client.id="dave00012"
-    console.log(client.user)
+    const authorized = (username === 'cod-h-pb-t-0' && password.toString() === 'cod-h-pb-t-0');
+    //client.id="dave00012"
+    //console.log(client.user)
     callback(null, authorized);
     
   };
@@ -19,17 +18,12 @@ broker.on('clientConnected', function(client) {
   });
 
 broker.on('ready', () => {  
-    console.log('Broker iniciado')
-    setInterval(()=>{        
-        
-        console.log('...')
-        
-    },10000) 
+    console.log('Broker iniciado')   
 })
 
-broker.on('published', (packet)=>{
-    console.log(packet.payload.toString())
-})
+// broker.on('published', (packet)=>{
+//     console.log(packet.payload.toString())
+// })
 // broker.on('ready', () => {
 //     console.log('Broker is ready')
 // })
@@ -39,4 +33,4 @@ broker.on('published', (packet)=>{
 // broker.on('published', (packet)=>{
 //     console.log(packet.payload.toString())
 // })
-module.exports
+
